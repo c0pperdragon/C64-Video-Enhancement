@@ -66,7 +66,7 @@ This assignment seems to be a kind of standard, but you can use any breakout cab
 as the common GND is located at the sleeve.
 
 Use the three-state switch at the back to select the video mode. The 240p/288p mode is not supported by all TVs and will
-probably create some de-interlacing artefacts. On the other side, this mode is perfect to feed into a dedicated
+probably create some de-interlacing artefacts. On the other hand, this mode is perfect to feed into a dedicated
 upscaler that can handle it (the famous 'Framemeister' or the 'OSSC' come to mind).
 
 ![alt text](doc/worldgames2.jpg "Output mode with visual scanline effect")	
@@ -82,7 +82,8 @@ and to carry the analog singnals in and out (to replicate the functionality of t
 (either two pins on each side if installed on a 'long' board or only two pins at the back if installed on a 'short' board) 
 and solder them to the main board. These pins are needed to connect the GND as well as to provide the correct vertical spacing.
 * Align the FPGA board vertically to the holes in the computer case and solder all pins.
-* Remove the VIC-II and put the adapter into the socket. For some main boards (specifically ASSY 250407) this
+* Remove the VIC-II and put the adapter into the socket and the VIC-II into the adapter.
+For some main boards (specifically ASSY 250407) this
 additionally requires to first make same space at the right side of the socket by relocating a capacitor and a trimmer pot. 
 Alternatively you could try to raise the adapter buy inserting an additional 40-pin IC socket.
 * Connect the 20-pin ribbon cable to the FPGA board.
