@@ -82,6 +82,7 @@ and to carry the analog singnals in and out (to replicate the functionality of t
 (either two pins on each side if installed on a 'long' board or only two pins at the back if installed on a 'short' board) 
 and solder them to the main board. These pins are needed to connect the GND as well as to provide the correct vertical spacing.
 * Align the FPGA board vertically to the holes in the computer case and solder all pins.
+* If your VIC-II uses the higher voltage (all 6xxx - variants), you need to short the JPLUM1 solder bridge. 
 * Remove the VIC-II and put the adapter into the socket and the VIC-II into the adapter.
 For some main boards (specifically ASSY 250407) this
 additionally requires to first make same space at the right side of the socket by relocating a capacitor and a trimmer pot. 
