@@ -108,7 +108,7 @@ The 4-pin TSSR connector provides the YPbPr signal, and this can be connected to
 * A breakout adapter with a TSSR jack and 3 female RCA jacks. With this a standard YPbPr cable with male plugs can be attached.
 * A cable with a TSSR jack and 3 male RCA plugs. This can be plugged directly into the YPbPr input on a TV.
 * Some TVs also use a TSSR jack to input YPbPr, probably to safe cost and space. There it is possible to directly use a cable 
-with two TSSR plugs on both sides (given that the TV uses the same pin assignment: Tip=Y, Ring 1=Pb, Ring 2=Pr, Sleve=GND).
+with two TSSR plugs on both sides (given that the TV uses the same pin assignment: Tip=Y, Ring 1=Pb, Ring 2=Pr, Sleeve=GND).
 
 ## Contact
 If you want to receive a C64 Video enhancement board, feel free to contact me:
