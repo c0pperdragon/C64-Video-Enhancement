@@ -36,7 +36,7 @@ The mod set consists of two main parts:
 	signals and translates them to 3.3V logic levels for use by the FPGA.
 * FPGA board
     This is connected via a ribbon cable to the adapter to receive the signal stream and
-	provice the YPbPr output on a 4-pin TSSR jack. 
+	provide a YPbPr output signal on a 4-pin TSSR jack. 
 	Additionally this board carries the necessary electronics to take over the functions 
 	of the removed RF modulator to amplify the composite and s-video signals (so the original A/V-jack 
 	is still functional).
@@ -47,16 +47,18 @@ The mod set consists of two main parts:
 
 The mod is intended to eventually support all revisions of the C64: PAL and NTSC, 
 long boards and short boards and 5V or 12V supply voltage.
-The hardware is probably already compatible (tested with a long 12V-board and a short 5V-boards),
-but for the various variants of the VIC-II (mainly NTSC) I still need to adapt the firmware. 
+The hardware is probably already compatible (tested with a long 12V-board and a short 5V-board),
+but for some variants of the VIC-II (specifically the 6567R56A that was used in the very
+first devices) I still need to adapt the firmware. 
 	
 The mod was tested to work with the following variants of the VIC-II:
-* 8565R2
-* 6569R5
+* 6569R5  (PAL)
+* 8565R2  (PAL)
+* 8562R4  (NTSC)
 
 ## Video output
 
-The mod board generates a YPbPr signal which can be switched to one of three modes:
+The mod board generates a YPbPr signal which can be switched to one of three modes using the onboard slider switch:
 * 240p/288p progressive 50Hz/60Hz
 * 480p/576p progressive 50Hz/60Hz using scanline doubling
 * 480p/576p progressive 50Hz/60Hz with visual scanline effect
@@ -68,31 +70,46 @@ as the common GND is located at the sleeve.
 Use the three-state switch at the back to select the video mode. The 240p/288p mode is not supported by all TVs and will
 probably create some de-interlacing artefacts. On the other hand, this mode is perfect to feed into a dedicated
 upscaler that can handle it (the famous 'Framemeister' or the 'OSSC' come to mind).
+The 480p/576p modes are best used with TVs and give quite a good picture already without any additional upscaler.
 
 ![alt text](doc/worldgames2.jpg "Output mode with visual scanline effect")	
 
 ## Installation instructions
 
-* Remove the RF modulator
-This requires some skill and a proper desoldering pump. I managed to do it with just a soldering iron and a manual pump
-but I would not recommend it.
-* Solder two 4-pin headers to the mainboard. These pins will later go into the FPGA board to provide power
+### Adapter board
+
+* Remove the VIC-II and put the adapter board into the socket. On some main boards, this could require to either relocate some 
+passives or to insert an additional IC-socket to rise the adapter above these passives.
+* Put the VIC-II into the adapter. Make sure to put it in the original orientation.
+* I have found that some boards have such a low-quality IC socket that it will not hold the adapter board tightly enough. 
+If this is the case, you should replace it with a precision IC socket.
+ 
+### Test the FPGA board (optional)
+
+Before de-soldering the RF modulator, you can test the function of the main mod board. For this, temporarily connect 
+one of GND3,GND4,GND5 somewhere to the C64 GND and the rightmost hole of RFCON2 to +5V. Connect the ribbon cable from the
+adapter to the FPGA board. The TSSR plug should then already output a proper YPbPr signal.
+
+### Install the FPGA board permanently
+* Remove the RF modulator and remove all the solder from the pin holes.
+* Install both 4-pin headers in the mainboard  These pins will later go into the FPGA board to provide power
 and to carry the analog singnals in and out (to replicate the functionality of the RF modulator).
 * Temporarily stick the FPGA board onto the pins and use it as a means to align the remaining pins correctly to the main board
 (either two pins on each side if installed on a 'long' board or only two pins at the back if installed on a 'short' board) 
 and solder them to the main board. These pins are needed to connect the GND as well as to provide the correct vertical spacing.
 * Align the FPGA board vertically to the holes in the computer case and solder all pins.
 * If your VIC-II uses the higher voltage (all 6xxx - variants), you need to short the JPLUM1 solder bridge. 
-* Remove the VIC-II and put the adapter into the socket and the VIC-II into the adapter.
-For some main boards (specifically ASSY 250407) this
-additionally requires to first make same space at the right side of the socket by relocating a capacitor and a trimmer pot. 
-Alternatively you could try to raise the adapter buy inserting an additional 40-pin IC socket.
 * Connect the 20-pin ribbon cable to the FPGA board.
 
+### Cabling
+The 4-pin TSSR connector provides the YPbPr signal, and this can be connected to a TV or upscaler using different cabling options:
+* A breakout adapter with a TSSR jack and 3 female RCA jacks. With this a standard YPbPr cable with male plugs can be attached.
+* A cable with a TSSR jack and 3 male RCA plugs. This can be plugged directly into the YPbPr input on a TV.
+* Some TVs also use a TSSR jack to input YPbPr, probably to safe cost and space. There it is possible to directly use a cable 
+with two TSSR plugs on both sides (given that the TV uses the same pin assignment: Tip=Y, Ring 1=Pb, Ring 2=Pr, Sleve=GND).
 
 ## Contact
 If you want to receive a C64 Video enhancement board, feel free to contact me:
 reinhard.grafl (at) aon.at  
-I do not yet have a series production started, but I could produce a few sets manually
-if demand is too low for a small series production.
+I do not yet have a series production started, but I could produce a few sets manually for the cost of parts and shipping.
 
