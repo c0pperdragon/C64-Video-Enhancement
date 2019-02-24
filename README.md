@@ -94,6 +94,8 @@ adapter to the FPGA board. The TSSR plug should then already output a proper YPb
 * Remove the RF modulator and remove all the solder from the pin holes.
 * Install both 4-pin headers in the mainboard  These pins will later go into the FPGA board to provide power
 and to carry the analog singnals in and out (to replicate the functionality of the RF modulator).
+* Check into which holes in the FPGA board these pins will go. For installation on a "long" main board, these are the
+8 holes at the edge, for a "short" main board, use the other set of holes.
 * Temporarily stick the FPGA board onto the pins and use it as a means to align the remaining pins correctly to the main board
 (either two pins on each side if installed on a 'long' board or only two pins at the back if installed on a 'short' board) 
 and solder them to the main board. These pins are needed to connect the GND as well as to provide the correct vertical spacing.
