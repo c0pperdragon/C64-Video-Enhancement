@@ -24,9 +24,11 @@ logic implemented in an FPGA, a pixel-perfect replication of the video image can
 
 ## Hardware
 
-This mod evolved from a previous version that uses my generic A-Video board. It fixes the main
+This mod evolved from a previous version that uses my generic 
+[A-Video board](https://github.com/c0pperdragon/A-VideoBoard/tree/master/c64mod). 
+It fixes the main
 shortcomings of this version, as it was a very ugly install and it needed big holes in the case
-for the three RCA plugs.
+for the three RCA plugs. It is compatible with the VIC-II adapter board and the firmware.
 This board now is designed to replace the RF modulator and use the existing holes in the 
 case. No need to modify the outside of the C64 in any way.
 
@@ -78,8 +80,10 @@ The 480p/576p modes are best used with TVs and give quite a good picture already
 
 ### Adapter board
 
-* Remove the VIC-II and put the adapter board into the socket. On some main boards, this could require to either relocate some 
-passives or to insert an additional IC-socket to rise the adapter above these passives.
+* Remove the VIC-II and put the adapter board into the socket. The correct orientation for the
+adapter is such that the ribbon cable either extends to the right or to the top (depending on your main board).
+On some main boards, this could require to either relocate some 
+passives or to insert an additional IC-socket to rise the adapter above these passives. 
 * Put the VIC-II into the adapter. Make sure to put it in the original orientation.
 * I have found that some boards have such a low-quality IC socket that it will not hold the adapter board tightly enough. 
 If this is the case, you should replace it with a precision IC socket.
