@@ -6,8 +6,8 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 1 1
 Title "RF replacement"
-Date ""
-Rev "2"
+Date "2019-03-10"
+Rev "3"
 Comp "c0pperdragon"
 Comment1 "github.com/c0pperdragon/A-VideoBoard"
 Comment2 ""
@@ -2190,7 +2190,7 @@ U 1 1 5D6B9C51
 P 1550 750
 F 0 "GND1" H 1630 792 50  0000 L CNN
 F 1 "Conn_01x01" H 1630 701 50  0000 L CNN
-F 2 "Connector_Pin:Pin_D1.0mm_L10.0mm" H 1550 750 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 1550 750 50  0001 C CNN
 F 3 "~" H 1550 750 50  0001 C CNN
 	1    1550 750 
 	1    0    0    -1  
@@ -2203,7 +2203,7 @@ U 1 1 5D74CD8A
 P 1550 950
 F 0 "GND2" H 1630 992 50  0000 L CNN
 F 1 "Conn_01x01" H 1630 901 50  0000 L CNN
-F 2 "Connector_Pin:Pin_D1.0mm_L10.0mm" H 1550 950 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 1550 950 50  0001 C CNN
 F 3 "~" H 1550 950 50  0001 C CNN
 	1    1550 950 
 	1    0    0    -1  
@@ -2216,7 +2216,7 @@ U 1 1 5D79677E
 P 3050 750
 F 0 "GND3" H 3130 792 50  0000 L CNN
 F 1 "Conn_01x01" H 3130 701 50  0000 L CNN
-F 2 "Connector_Pin:Pin_D1.0mm_L10.0mm" H 3050 750 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3050 750 50  0001 C CNN
 F 3 "~" H 3050 750 50  0001 C CNN
 	1    3050 750 
 	1    0    0    -1  
@@ -2240,7 +2240,7 @@ U 1 1 5D79678C
 P 3050 950
 F 0 "GND4" H 3130 992 50  0000 L CNN
 F 1 "Conn_01x01" H 3130 901 50  0000 L CNN
-F 2 "Connector_Pin:Pin_D1.0mm_L10.0mm" H 3050 950 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3050 950 50  0001 C CNN
 F 3 "~" H 3050 950 50  0001 C CNN
 	1    3050 950 
 	1    0    0    -1  
@@ -2863,17 +2863,11 @@ Wire Wire Line
 	15400 6050 15400 6200
 Connection ~ 15400 6050
 Wire Wire Line
-	15300 5850 15300 4700
-Wire Wire Line
-	14650 5850 15300 5850
+	14650 5850 15100 5850
 Wire Wire Line
 	15200 5400 15200 4700
 Wire Wire Line
 	14800 5400 15200 5400
-Wire Wire Line
-	15100 4950 15100 4700
-Wire Wire Line
-	14650 4950 15100 4950
 Wire Wire Line
 	13000 5150 13000 5450
 Wire Wire Line
@@ -2892,4 +2886,10 @@ Wire Wire Line
 	14150 5450 14200 5450
 Wire Wire Line
 	14200 5450 14200 4950
+Wire Wire Line
+	15300 4950 15300 4700
+Wire Wire Line
+	14650 4950 15300 4950
+Wire Wire Line
+	15100 4700 15100 5850
 $EndSCHEMATC

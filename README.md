@@ -61,9 +61,9 @@ The mod was tested to work with the following variants of the VIC-II:
 ## Video output
 
 The mod board generates a YPbPr signal which can be switched to one of three modes using the onboard slider switch:
-* 240p/288p progressive 50Hz/60Hz
-* 480p/576p progressive 50Hz/60Hz using scanline doubling
-* 480p/576p progressive 50Hz/60Hz with visual scanline effect
+* 240p/288p progressive 60Hz/50Hz
+* 480p/576p progressive 60Hz/50Hz using scanline doubling
+* 480p/576p progressive 60Hz/50Hz with visual scanline effect
 
 The signal is provided on a 4-pin TRRS-jack. The order of signals (tip to sleve) is as follows:  Y, Pb, Pr, GND.
 This assignment seems to be a kind of standard, but you can use any breakout cable that converts TSSR to 3 RCA jacks, as long

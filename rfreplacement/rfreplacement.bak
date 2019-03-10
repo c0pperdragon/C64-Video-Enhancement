@@ -6,8 +6,8 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 1 1
 Title "RF replacement"
-Date ""
-Rev "2"
+Date "2019-03-10"
+Rev "3"
 Comp "c0pperdragon"
 Comment1 "github.com/c0pperdragon/A-VideoBoard"
 Comment2 ""
@@ -2749,7 +2749,7 @@ U 1 1 5CE223C3
 P 3350 5300
 F 0 "JPLUM1" V 3304 5398 50  0000 L CNN
 F 1 "Jumper_2_Open" V 3395 5398 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3350 5300 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3350 5300 50  0001 C CNN
 F 3 "~" H 3350 5300 50  0001 C CNN
 	1    3350 5300
 	0    1    1    0   
@@ -2863,17 +2863,11 @@ Wire Wire Line
 	15400 6050 15400 6200
 Connection ~ 15400 6050
 Wire Wire Line
-	15300 5850 15300 4700
-Wire Wire Line
-	14650 5850 15300 5850
+	14650 5850 15100 5850
 Wire Wire Line
 	15200 5400 15200 4700
 Wire Wire Line
 	14800 5400 15200 5400
-Wire Wire Line
-	15100 4950 15100 4700
-Wire Wire Line
-	14650 4950 15100 4950
 Wire Wire Line
 	13000 5150 13000 5450
 Wire Wire Line
@@ -2892,4 +2886,10 @@ Wire Wire Line
 	14150 5450 14200 5450
 Wire Wire Line
 	14200 5450 14200 4950
+Wire Wire Line
+	15300 4950 15300 4700
+Wire Wire Line
+	14650 4950 15300 4950
+Wire Wire Line
+	15100 4700 15100 5850
 $EndSCHEMATC
