@@ -95,6 +95,7 @@ one of GND3,GND4,GND5 somewhere to the C64 GND and the rightmost hole of RFCON2 
 adapter to the FPGA board. The TSSR plug should then already output a proper YPbPr signal.
 
 ### Install the FPGA board permanently
+
 * Remove the RF modulator and remove all the solder from the pin holes.
 * Install both 4-pin headers in the mainboard  These pins will later go into the FPGA board to provide power
 and to carry the analog singnals in and out (to replicate the functionality of the RF modulator).
@@ -108,6 +109,7 @@ and solder them to the main board. These pins are needed to connect the GND as w
 * Connect the 20-pin ribbon cable to the FPGA board.
 
 ### Cabling
+
 The 4-pin TSSR connector provides the YPbPr signal, and this can be connected to a TV or upscaler using different cabling options:
 * A breakout adapter with a TSSR jack and 3 female RCA jacks. With this a standard YPbPr cable with male plugs can be attached.
 * A cable with a TSSR jack and 3 male RCA plugs. This can be plugged directly into the YPbPr input on a TV.
@@ -115,7 +117,24 @@ The 4-pin TSSR connector provides the YPbPr signal, and this can be connected to
 with two TSSR plugs on both sides (given that the TV uses the same pin assignment: Tip=Y, Ring 1=Pb, Ring 2=Pr, Sleeve=GND).
 
 ## Contact
-If you want to receive a C64 Video enhancement board, feel free to contact me:
-reinhard.grafl (at) aon.at  
-I do not yet have a series production started, but I could produce a few sets manually for the cost of parts and shipping.
 
+I am in preparation of manufacturing 10 kits, and this will probably be all I make by hand.
+As I received nearly as much orders already, you may just be able to get on my list if you contact me on:
+reinhard.grafl (at) aon.at  
+
+## Create your own kit
+Everything to create the RF replacement board as well as the VIC adapter board (see the A-Video board repository) is 
+completely open source and free to use for any purpose. 
+Most parts are pretty standard, only the TSSR connector and the three-way switch are probably not that easy to source with
+every electronics retailer. There you possibly need to adjust the PCB layout to make your own parts fit.
+
+Hint for assembling: The holes denoted GND1 - GND5 should not be populated with pin headers during assembly. It is intended that
+pin headers that are installed into the C64 main board will stick up through the holes and are soldered as last step
+of the installation.
+Hint for testing: After the board is assembled and before installing it into the computer, you can already upload
+a test pattern generator to the FPGA (the quartus folder that is directly located in the A-Video Board repository). 
+Do this with a USB-Blaster connected to the JTAG headers. You also must provide 5V-9V on the power pin
+(the rightmost hole of RFCON2 - as seen from the edge of the board) and 0V to any of GND3, GND4, GND5.  
+The test pattern should show some fancy colors and three gradients to test each of the three signal components.
+If the gradients look uneven or have less than 32 different steps each, you probably have some soldering 
+problems in the resistor networks.
