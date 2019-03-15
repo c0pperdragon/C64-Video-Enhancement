@@ -116,11 +116,6 @@ The 4-pin TSSR connector provides the YPbPr signal, and this can be connected to
 * Some TVs also use a TSSR jack to input YPbPr, probably to safe cost and space. There it is possible to directly use a cable 
 with two TSSR plugs on both sides (given that the TV uses the same pin assignment: Tip=Y, Ring 1=Pb, Ring 2=Pr, Sleeve=GND).
 
-## Contact
-
-I am in preparation of manufacturing 10 kits, and this will probably be all I make by hand.
-As I received nearly as much orders already, you may just be able to get on my list if you contact me on:
-reinhard.grafl (at) aon.at  
 
 ## Create your own kit
 Everything to create the RF replacement board as well as the VIC adapter board (see the A-Video board repository) is 
@@ -138,3 +133,10 @@ Do this with a USB-Blaster connected to the JTAG headers. You also must provide 
 The test pattern should show some fancy colors and three gradients to test each of the three signal components.
 If the gradients look uneven or have less than 32 different steps each, you probably have some soldering 
 problems in the resistor networks.
+
+## Contact
+For technical questions and also to share your experience with this modification, please
+use the issue tracking system of github. 
+If you want to receive a set of bare PCBs, please contact me directly at  reinhard.grafl (at) aon.at
+maybe I will have some to spare.
+
