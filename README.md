@@ -60,7 +60,8 @@ The mod was tested to work with the following variants of the VIC-II:
 
 ## Video output
 
-The mod board generates a YPbPr signal which can be switched to one of three modes using the onboard slider switch:
+The mod board generates a YPbPr signal which can be switched to one of three modes using the onboard slider switch
+(right to left, when looking at the switch):
 * 240p/288p progressive 60Hz/50Hz
 * 480p/576p progressive 60Hz/50Hz using scanline doubling
 * 480p/576p progressive 60Hz/50Hz with visual scanline effect
@@ -97,14 +98,16 @@ adapter to the FPGA board. The TSSR plug should then already output a proper YPb
 ### Install the FPGA board permanently
 
 * Remove the RF modulator and remove all the solder from the pin holes.
-* Install both 4-pin headers in the mainboard  These pins will later go into the FPGA board to provide power
-and to carry the analog singnals in and out (to replicate the functionality of the RF modulator).
+* Install both 4-pin headers in the mainboard, pointing upwards. These pins will later go into the FPGA board to provide power
+and to carry the analog signals in and out (to replicate the functionality of the RF modulator).
 * Check into which holes in the FPGA board these pins will go. For installation on a "long" main board, these are the
 8 holes at the edge, for a "short" main board, use the other set of holes.
 * Temporarily stick the FPGA board onto the pins and use it as a means to align the remaining pins correctly to the main board
 (either two pins on each side if installed on a 'long' board or only two pins at the back if installed on a 'short' board) 
-and solder them to the main board. These pins are needed to connect the GND as well as to provide the correct vertical spacing.
-* Align the FPGA board vertically to the holes in the computer case and solder all pins.
+and solder them to the main board, also pointing upwards. 
+These pins are needed to connect the GND as well as to provide the correct vertical spacing.
+* Align the FPGA board vertically to the holes in the computer case and solder all pins. For standard pins this
+normally means to rise the FPGA board all the way up to the very tip of these pins. 
 * If your VIC-II uses the higher voltage (all 6xxx - variants), you need to short the JPLUM1 solder bridge. 
 * Connect the 20-pin ribbon cable to the FPGA board.
 
