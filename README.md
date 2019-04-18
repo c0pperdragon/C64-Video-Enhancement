@@ -137,6 +137,19 @@ The test pattern should show some fancy colors and three gradients to test each 
 If the gradients look uneven or have less than 32 different steps each, you probably have some soldering 
 problems in the resistor networks.
 
+## Color palette
+I have chosen very bright colors for the video output, to give the picture a fresher look. 
+Especially "Mayhem in Monsterland" makes much more sense this way ;-)
+I know that these saturated colors may not be to everybodies taste. If you want to reduce the color
+saturation as a whole, you can replace the resistors R18 and R19 with lower values. 75 Ohm works fine, or
+even 68 Ohm for even lower saturation. If you don't want to desolder these small parts, you could as
+well solder an additiona 150 Ohm right on top of each of the existing R18 and R19 (this also results
+in 75 Ohm total). 
+
+I am already planning future versions of the firmware, where you can configure each palette color 
+independently in software. But this may take some more time.
+
+
 ## Contact
 For technical questions and also to share your experience with this modification, please
 use the issue tracking system of github. 
