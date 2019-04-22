@@ -142,8 +142,8 @@ I have chosen very bright colors for the video output, to give the picture a fre
 Especially "Mayhem in Monsterland" makes much more sense this way ;-)
 I know that these saturated colors may not be to everybodies taste. If you want to reduce the color
 saturation as a whole, you can replace the resistors R18 and R19 with lower values. 75 Ohm works fine, or
-even 68 Ohm for even lower saturation. If you don't want to desolder these small parts, you could as
-well solder an additiona 150 Ohm right on top of each of the existing R18 and R19 (this also results
+68 Ohm for even lower saturation. If you don't want to desolder these small parts, you could as
+well solder an additional 150 Ohm right on top of each of the existing R18 and R19 (this also results
 in 75 Ohm total). 
 
 I am already planning future versions of the firmware, where you can configure each palette color 
