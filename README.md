@@ -121,16 +121,26 @@ with two TSSR plugs on both sides (given that the TV uses the same pin assignmen
 
 
 ## Create your own kit
-Everything to create the RF replacement board as well as the VIC adapter board (see the A-Video board repository) is 
-completely open source and free to use for any purpose. 
+Everything to create the RF replacement board as well as the VIC adapter board (see the 
+[A-Video board](https://github.com/c0pperdragon/A-VideoBoard/tree/master/c64mod)
+repository) is completely open source and free to use for any purpose. 
+
 Most parts are pretty standard, only the TSSR connector and the three-way switch are probably not that easy to source with
 every electronics retailer. There you possibly need to adjust the PCB layout to make your own parts fit.
+For your convenience, I have set up a project parts list at 
+[mouser](https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=9f8979b031)
+that contains everything besides the TSSR jack. For this jack you can use a "Cliff FC68125" with is available at 
+several retailers or another part with the same footprint. 
+For my original design I myself used an 
+[unbranded part from a local retailer](https://www.conrad.at/de/p/conrad-components-klinken-steckverbinder-3-5-mm-buchse-einbau-horizontal-polzahl-4-stereo-schwarz-1-st-718732.html).
+which did meet all my requirements and was pretty cheap as well.
 
 Hint for assembling: The holes denoted GND1 - GND5 should not be populated with pin headers during assembly. It is intended that
 pin headers that are installed into the C64 main board will stick up through the holes and are soldered as last step
 of the installation.
 Hint for testing: After the board is assembled and before installing it into the computer, you can already upload
-a test pattern generator to the FPGA (the quartus folder that is directly located in the A-Video Board repository). 
+a test pattern generator to the FPGA (available as binary release in the 
+[A-Video project](https://github.com/c0pperdragon/A-VideoBoard/releases). 
 Do this with a USB-Blaster connected to the JTAG headers. You also must provide 5V-9V on the power pin
 (the rightmost hole of RFCON2 - as seen from the edge of the board) and 0V to any of GND3, GND4, GND5.  
 The test pattern should show some fancy colors and three gradients to test each of the three signal components.
