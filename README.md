@@ -132,7 +132,7 @@ For your convenience, I have set up a project parts list at
 that contains everything besides the TSSR jack. For this jack you can use a "Cliff FC68125" with is available at 
 several retailers or another part with the same footprint. 
 For my original design I myself used an 
-[unbranded part from a local retailer](https://www.conrad.at/de/p/conrad-components-klinken-steckverbinder-3-5-mm-buchse-einbau-horizontal-polzahl-4-stereo-schwarz-1-st-718732.html).
+[unbranded part from a local retailer](https://www.conrad.at/de/p/conrad-components-klinken-steckverbinder-3-5-mm-buchse-einbau-horizontal-polzahl-4-stereo-schwarz-1-st-718732.html)
 which did meet all my requirements and was pretty cheap as well.
 
 Hint for assembling: The holes denoted GND1 - GND5 should not be populated with pin headers during assembly. It is intended that
