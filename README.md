@@ -163,6 +163,3 @@ independently in software. But this may take some more time.
 ## Contact
 For technical questions and also to share your experience with this modification, please
 use the issue tracking system of github. 
-If you want to receive a set of bare PCBs, please contact me directly at  reinhard.grafl (at) aon.at
-maybe I will have some to spare.
-
