@@ -165,40 +165,42 @@ together to a single SCART connector.
 ## Details on color signal reprogramming
 Beginning with firmware 2.0, the mod uses a set of 256 16-bit registers to hold the palette information.
 These registers can be reprogrammed directly from the C64 and stored persistenly on the FPGA chip.
-### Unlock the registers
+#### Unlock the registers
 Before you can change the register contents, you need to write a value of 137 to memory address 53311.
 Then switch the output mode switch to a different mode and back again (back is optional). This sequence is 
 necessary to prevent untrusted code to modify the settings. This could a be a special concern on demo competitions.
-### Write into registers
+#### Write into registers
 For writing a 16-bit value, you need to first write the low byte into address 53308 and the high byte
 into address 53309. Then write the target register number into address 53310. You can store the same value
 into multiple registers by writing additional register numbers into 53310 without changing the data each time.
 Note that it is not possible to read out any register contents. 
-### Store permanently
+#### Store permanently
 When you have changed the registers to your liking, you can store this permanently by writing the value 138
 to address 53311. During storing this will also cause some random pixels to appear on the screen for a short time. 
-### Meaning of the registers
+#### Meaning of the registers
 The registers can be thought of to form a 16x16 matrix (stored line by line), where each cell specifies the exact color
 that needs to be produced when the computer wants to display one of its 16 colors, with the consideration
 of which color has been displayed in the line directly above. 
 
 If you do not want to simulate PAL color blending, all rows in the matrix will hold the same value. 
-There it does not matter for the current line, which color has been displayed above. 
+There it does not matter for the current line which color has been displayed above. 
 
 If you want to do color blending, you can cook up any coloring blending 
 scheme you want. The register accessed is always defined by currentcolor * 16 + colorabove. 
 
 Each register contains 3 5-bit numbers that specifiy the analog signal levels to be sent on the signal outputs.
+
 | Bits  | Signal   |
-|-------|----------|
+| ----- | -------- |
 | 0-4   | Pr       |
 | 5-9   | Pb       |
 | 10-14 | Y        |
 | 15    | unused   |
-### Disabling sync 
+
+#### Disabling sync 
 Bit 15 of register 0 has a special function, as it can be used to suppress the sync signal.
 Writing a 1 into this bit will turn off sync on the Y line, when the 240p/288p output mode is selected.
-In this mode, the luminousity line of the original A/V connector can be used to get a sync signal from
+In this mode, the luminousity line of the original A/V connector can be used to get the sync signal from
 instead. 
 
 ## Contact
