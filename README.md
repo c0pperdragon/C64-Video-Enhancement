@@ -206,3 +206,6 @@ instead.
 ## Contact
 For technical questions and also to share your experience with this modification, please
 use the issue tracking system of github. 
+
+If you really insist on donating money, please feel free to send any amount to my paypal account: 
+reinhard.grafl (at) aon.at
