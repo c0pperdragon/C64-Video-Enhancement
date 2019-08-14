@@ -127,7 +127,9 @@ repository) is completely open source and free to use for any purpose.
 
 Most parts are pretty standard, only the TSSR connector and the three-way switch are probably not that easy to source with
 every electronics retailer.
-For your convenience, I have set up a project parts list at 
+For your convenience, I have set up a 
+[BOM](doc/fpgaboard_bom.ods)
+and a project parts list at 
 [mouser](https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=9f8979b031)
 that contains everything besides the TSSR jack. For this jack you can use a "Cliff FC68125" with is available at 
 several retailers or another part with the same footprint. 
