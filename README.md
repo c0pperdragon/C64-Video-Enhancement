@@ -164,6 +164,9 @@ of YPbPr. When you choose to disable sync, you need to get the sync signal from 
 In this case it is even possible to build an adapter cable that joins the A/V signals and the RGB signals
 together to a single SCART connector.
 
+When you want to use a color palette according to the "colodore" algorithm, you can use Hojo-Norem's
+[palette tuning program](https://github.com/Hojo-Norem/c0pperdragon-VIC-II-Palette-editor). 
+
 ## Details on color signal reprogramming
 Beginning with firmware 2.0, the mod uses a set of 256 16-bit registers to hold the palette information.
 These registers can be reprogrammed directly from the C64 and stored persistenly on the FPGA chip.
