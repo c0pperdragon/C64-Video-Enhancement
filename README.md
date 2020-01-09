@@ -38,7 +38,7 @@ The mod set consists of two main parts:
 	signals and translates them to 3.3V logic levels for use by the FPGA.
 * FPGA board
     This is connected via a ribbon cable to the adapter to receive the signal stream and
-	provide a YPbPr output signal on a 4-pin TSSR jack. 
+	provide a YPbPr output signal on a 4-pin TRRS jack. 
 	Additionally this board carries the necessary electronics to take over the functions 
 	of the removed RF modulator to amplify the composite and s-video signals (so the original A/V-jack 
 	is still functional).
@@ -67,8 +67,8 @@ The mod board generates a YPbPr signal which can be switched to one of three mod
 * 480p/576p progressive 60Hz/50Hz with visual scanline effect
 
 The signal is provided on a 4-pin TRRS-jack. The order of signals (tip to sleve) is as follows:  Y, Pb, Pr, GND.
-This assignment seems to be a kind of standard, but you can use any breakout cable that converts TSSR to 3 RCA jacks, as long
-as the common GND is located at the sleeve.
+This assignment seems to be a kind of standard, but you can use any breakout cable that converts TRRS to 3 RCA 
+jacks, as long as the common GND is located at the sleeve.
 
 Use the three-state switch at the back to select the video mode. The 240p/288p mode is not supported by all TVs and will
 probably create some de-interlacing artefacts. On the other hand, this mode is perfect to feed into a dedicated
@@ -93,7 +93,7 @@ If this is the case, you should replace it with a precision IC socket.
 
 Before de-soldering the RF modulator, you can test the function of the main mod board. For this, temporarily connect 
 one of GND3,GND4,GND5 somewhere to the C64 GND and the rightmost hole of RFCON2 to +5V. Connect the ribbon cable from the
-adapter to the FPGA board. The TSSR plug should then already output a proper YPbPr signal.
+adapter to the FPGA board. The TRRS plug should then already output a proper YPbPr signal.
 
 ### Install the FPGA board permanently
 
@@ -113,11 +113,11 @@ normally means to rise the FPGA board all the way up to the very tip of these pi
 
 ### Cabling
 
-The 4-pin TSSR connector provides the YPbPr signal, and this can be connected to a TV or upscaler using different cabling options:
-* A breakout adapter with a TSSR jack and 3 female RCA jacks. With this a standard YPbPr cable with male plugs can be attached.
-* A cable with a TSSR jack and 3 male RCA plugs. This can be plugged directly into the YPbPr input on a TV.
-* Some TVs also use a TSSR jack to input YPbPr, probably to safe cost and space. There it is possible to directly use a cable 
-with two TSSR plugs on both sides (given that the TV uses the same pin assignment: Tip=Y, Ring 1=Pb, Ring 2=Pr, Sleeve=GND).
+The 4-pin TRRS connector provides the YPbPr signal, and this can be connected to a TV or upscaler using different cabling options:
+* A breakout adapter with a TRRS jack and 3 female RCA jacks. With this a standard YPbPr cable with male plugs can be attached.
+* A cable with a TRRS jack and 3 male RCA plugs. This can be plugged directly into the YPbPr input on a TV.
+* Some TVs also use a TRRS jack to input YPbPr, probably to safe cost and space. There it is possible to directly use a cable 
+with two TRRS plugs on both sides (given that the TV uses the same pin assignment: Tip=Y, Ring 1=Pb, Ring 2=Pr, Sleeve=GND).
 
 
 ## Create your own kit
@@ -125,13 +125,13 @@ Everything to create the RF replacement board as well as the VIC adapter board (
 [A-Video board](https://github.com/c0pperdragon/A-VideoBoard/tree/master/c64mod)
 repository) is completely open source and free to use for any purpose. 
 
-Most parts are pretty standard, only the TSSR connector and the three-way switch are probably not that easy to source with
+Most parts are pretty standard, only the TRRS connector and the three-way switch are probably not that easy to source with
 every electronics retailer.
 For your convenience, I have set up a 
 [BOM](doc/fpgaboard_bom.ods)
 and a project parts list at 
 [mouser](https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=9f8979b031)
-that contains everything besides the TSSR jack. For this jack you can use a "Cliff FC68125" with is available at 
+that contains everything besides the TRRS jack. For this jack you can use a "Cliff FC68125" with is available at 
 several retailers or another part with the same footprint. 
 For my original design I myself used an 
 [unbranded part from a local retailer](https://www.conrad.at/de/p/conrad-components-klinken-steckverbinder-3-5-mm-buchse-einbau-horizontal-polzahl-4-stereo-schwarz-1-st-718732.html)
@@ -204,7 +204,7 @@ Each register contains 3 5-bit numbers that specifiy the analog signal levels to
 
 #### Disabling sync 
 Bit 15 of register 0 has a special function, as it can be used to suppress the sync signal.
-Writing a 1 into this bit will turn off sync on the Y line, when the 240p/288p output mode is selected.
+Writing a 1 into this bit will turn off sync on the Y line, whenever the 240p/288p output mode is selected.
 In this mode, the luminousity line of the original A/V connector can be used to get the sync signal from
 instead. 
 
