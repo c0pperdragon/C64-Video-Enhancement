@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 16)
+    (drawings 19)
     (tracks 1035)
     (zones 0)
     (modules 97)
@@ -10,6 +10,10 @@
   )
 
   (page A4)
+  (title_block
+    (rev "Rev. 3 VGP")
+  )
+
   (layers
     (0 F.Cu signal)
     (31 B.Cu signal)
@@ -34,7 +38,7 @@
   )
 
   (setup
-    (last_trace_width 0.5)
+    (last_trace_width 0.25)
     (user_trace_width 0.5)
     (user_trace_width 0.8)
     (trace_clearance 0.2)
@@ -4378,6 +4382,15 @@
     )
   )
 
+  (gr_text "BetaGamma\nComputing" (at 161.798 58.42 270) (layer F.SilkS)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
+  (gr_text "VGP Media" (at 106.172 81.534 270) (layer F.SilkS)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
+  (gr_text ROHS (at 106.172 55.372 270) (layer F.SilkS)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
   (gr_text "C64 Video Enhancement Rev. 3\ngithub.com/c0pperdragon" (at 109.982 94.361 270) (layer B.SilkS) (tstamp 5C859D70)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify mirror))
   )
@@ -5437,7 +5450,7 @@
   (segment (start 163.703 102.87) (end 164.465 102.108) (width 0.25) (layer F.Cu) (net 133))
   (segment (start 164.465 102.108) (end 164.465 100.33) (width 0.25) (layer F.Cu) (net 133))
 
-  (zone (net 122) (net_name GNDA) (layer B.Cu) (tstamp 5C2C5AF3) (hatch edge 0.508)
+  (zone (net 122) (net_name GNDA) (layer B.Cu) (tstamp 5E2613CD) (hatch edge 0.508)
     (connect_pads yes (clearance 0.3))
     (min_thickness 0.3)
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
@@ -5529,7 +5542,7 @@
       )
     )
   )
-  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 5C2C5AF0) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 5E2613CA) (hatch edge 0.508)
     (connect_pads yes (clearance 0.3))
     (min_thickness 0.3)
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
