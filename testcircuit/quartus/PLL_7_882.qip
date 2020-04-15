@@ -1,0 +1,6 @@
+set_global_assignment -name IP_TOOL_NAME "ALTPLL"
+set_global_assignment -name IP_TOOL_VERSION "18.1"
+set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "{MAX 10}"
+set_global_assignment -name VHDL_FILE [file join $::quartus(qip_path) "PLL_7_882.vhd"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "PLL_7_882.cmp"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "PLL_7_882.ppf"]
