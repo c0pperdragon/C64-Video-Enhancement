@@ -34,7 +34,7 @@
   )
 
   (setup
-    (last_trace_width 0.8)
+    (last_trace_width 0.25)
     (user_trace_width 0.5)
     (user_trace_width 0.8)
     (user_trace_width 1.2)
@@ -487,7 +487,7 @@
     (tags "capacitor handsolder")
     (path /5D595035)
     (attr smd)
-    (fp_text reference C10 (at -0.009 -4.318 270) (layer F.SilkS)
+    (fp_text reference C10 (at -2.549 0) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value 100nF (at 0 1.65 270) (layer F.Fab)
@@ -517,7 +517,7 @@
     )
   )
 
-  (module Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder (layer F.Cu) (tedit 5B36C52B) (tstamp 5DFB083B)
+  (module Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder (layer F.Cu) (tedit 5B36C52B) (tstamp 5E9DCE47)
     (at 111.76 86.115 90)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
@@ -559,7 +559,7 @@
     (tags "capacitor handsolder")
     (path /5CE51EA2)
     (attr smd)
-    (fp_text reference C29 (at 2.422 -2.54 180) (layer F.SilkS)
+    (fp_text reference C29 (at 0.009 1.778 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value 100nF (at 0 1.65 90) (layer F.Fab)
