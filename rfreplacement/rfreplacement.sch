@@ -2831,12 +2831,12 @@ Connection ~ 10550 1200
 Wire Wire Line
 	7700 3400 7750 3400
 $Comp
-L Connector_Generic_MountingPin:Conn_01x20_MountingPin J?
+L Connector_Generic_MountingPin:Conn_01x20_MountingPin JFPC1
 U 1 1 61273772
 P 6200 1650
-F 0 "J?" V 6425 1519 50  0000 C CNN
+F 0 "JFPC1" V 6425 1519 50  0000 C CNN
 F 1 "Conn_01x20_MountingPin" V 6334 1519 50  0000 C CNN
-F 2 "" H 6200 1650 50  0001 C CNN
+F 2 "Connector_FFC-FPC:Hirose_FH12-20S-0.5SH_1x20-1MP_P0.50mm_Horizontal" H 6200 1650 50  0001 C CNN
 F 3 "~" H 6200 1650 50  0001 C CNN
 	1    6200 1650
 	0    1    -1   0   
