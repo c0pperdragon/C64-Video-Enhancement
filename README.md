@@ -49,14 +49,16 @@ The mod set consists of two main parts:
 
 The mod is intended to eventually support all revisions of the C64: PAL and NTSC, 
 long boards and short boards and 5V or 12V supply voltage.
-The hardware is probably already compatible (tested with a long 12V-board and a short 5V-board),
+The hardware is already compatible (tested with a long 12V-board and a short 5V-board).
 but for some variants of the VIC-II (specifically the 6567R56A that was used in the very
-first devices) I still need to adapt the firmware. 
-	
-The mod was tested to work with the following variants of the VIC-II:
-* 6569R5  (PAL)
-* 8565R2  (PAL)
-* 8562R4  (NTSC)
+first devices) you may need to update the firmware to the latest version.
+The mod boards as sold by videogamesperfection.com have the firmware version 2.6 which already
+works with most variants of the VIC. 
+
+To support the 656765A chip, the mod additionally needs to be jumpered because it can not auto-detect
+this specific variant on its own: You need to connect pin 5 of the JTAG header to ground. This can fairly easily be done by
+connecting it to pin 2 of this header.
+
 
 ## Video output
 
