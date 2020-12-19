@@ -55,7 +55,7 @@ first devices) you may need to update the firmware to the latest version.
 The mod boards as sold by videogamesperfection.com have the firmware version 2.6 which already
 works with most variants of the VIC. 
 
-To support the 656765A chip, the mod additionally needs to be jumpered because it can not auto-detect
+To support the 6567R56A chip, the mod additionally needs to be jumpered because it can not auto-detect
 this specific variant on its own: You need to connect pin 5 of the JTAG header to ground. This can fairly easily be done by
 connecting it to pin 2 of this header.
 
@@ -209,6 +209,14 @@ Bit 15 of register 0 has a special function, as it can be used to suppress the s
 Writing a 1 into this bit will turn off sync on the Y line, whenever the 240p/288p output mode is selected.
 In this mode, the luminousity line of the original A/V connector can be used to get the sync signal from
 instead. 
+
+## Pixel clock generation
+
+Some C64s - especially the very first models - have a very bad clock circuit that generates an unstable and shaky pixel clock. 
+This may lead to all sorts of stability problems, including the component mod showing sparkly pixels or worse effects. 
+Because of this, I have added a hidden feature into the FPGA board that generates a stable clock signal you can
+use instead. For more details on how to wire this all up, you can check the various issue threads on this topic (but be aware that
+this is getting very technical very fast).
 
 ## Contact
 For technical questions and also to share your experience with this modification, please
