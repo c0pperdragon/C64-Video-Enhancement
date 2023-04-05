@@ -4,8 +4,8 @@ use ieee.std_logic_1164.all;
 
 -- Test circuit to simulate the signals of a VIC in the C64 to drive
 -- and test a C64 video enhancement board in PAL mode.
--- The program also runs on C64 video enhanchement board of its on and used the
--- GPIO1 pins and the two pins of the mode switch as and output.
+-- The program also runs on C64 video enhanchement board of its own and use the
+-- GPIO1 pins and the two pins of the mode switch as an output.
 
 entity TestSignalGenerator is	
 	port (
@@ -16,10 +16,17 @@ entity TestSignalGenerator is
 		DB:    out std_logic_vector(11 downto 0);
 		A:     out std_logic_vector(5 downto 0);
 		CS:    out std_logic;
-		RW:    out std_logic; 
+		RW:    out std_logic;
 		-- BA:    out std_logic;
 		AEC:   out std_logic;
-		PHI0:  out std_logic
+		PHI0:  out std_logic;
+		SUBCARRIER: out std_logic;
+
+		-- multi-purpose use for the JTAG signals (a bit dangerous, but should work)
+		TMS : in std_logic;   -- keep the pin working so JTAG is possible
+		TCK : in std_logic;   -- keep the pin working so JTAG is possible
+		TDI : in std_logic;   -- external jumper to select 8-mhz output clock 
+		TDO : out std_logic   -- keep the pin working so JTAG is possible
 	);	
 end entity;
 
@@ -29,23 +36,26 @@ architecture immediate of TestSignalGenerator is
    component PLL_7_882 is
 	PORT
 	(
-		inclk0		: IN STD_LOGIC  := '0';
-		c0		: OUT STD_LOGIC 
+		inclk0: IN STD_LOGIC  := '0';
+		c0		: OUT STD_LOGIC; 
+		c1		: OUT STD_LOGIC 
 	);
 	end component;
 	
 	signal PIXELCLOCK : std_logic;
 
 begin		
-	clkpll: PLL_7_882 port map ( CLK25, PIXELCLOCK );
+	clkpll: PLL_7_882 port map ( CLK25, PIXELCLOCK, SUBCARRIER );
 
 
-	process (PIXELCLOCK)
+	process (PIXELCLOCK,TDI)
 		variable displayline : integer range 0 to 311 := 0;
 		variable cycle : integer range 1 to 63 := 1;
 		variable pixel: integer range 0 to 7 := 0;
+		variable cpuclock : std_logic;
+		variable dramaddress : integer range 0 to 3 := 3;
 	begin	
-
+	
 	
 		if rising_edge(PIXELCLOCK) then
 			-- idle levels of all signals
@@ -58,29 +68,23 @@ begin
 			-- signals in first half of the c64 clock
 			if pixel<4 then			
 				AEC <= '0';
-				PHI0 <= '0';
+				cpuclock := '0';
 				
-				-- dram refresh pattern (not the correct one, but the mod will detect it)
+				-- dram refresh pattern
 				if cycle>=11 and cycle<=15 then
 					if displayline=311 then
 						A(1 downto 0) <= "11";
-					elsif cycle=11 then
-						A(1 downto 0) <= "11";
-					elsif cycle=12 then
-						A(1 downto 0) <= "10";
-					elsif cycle=13 then
-						A(1 downto 0) <= "01";
-					elsif cycle=14 then
-						A(1 downto 0) <= "00";
-					else
-						A(1 downto 0) <= "11";
+						dramaddress := 3;
+					else 
+						A(1 downto 0) <= std_logic_vector(to_unsigned(dramaddress,2));
+					   dramaddress := dramaddress+1;
 					end if;
 				end if;			
 				
 			
 			-- signals in second half of the c64 clock
 			else	
-				PHI0 <= '1';
+				cpuclock := '1';
 				
 				-- vic accessing the video matrix data (every line, but that does not bother me now)
 				if displayline>=50 and displayline<250 and cycle>=15 and cycle<55 then
@@ -261,5 +265,13 @@ begin
 				end if;
 			end if;
 		end if;
+		
+		
+		if TDI='0' then
+			PHI0 <= PIXELCLOCK;
+		else
+			PHI0 <= cpuclock;
+		end if;
+		
 	end process;		
 end immediate;
