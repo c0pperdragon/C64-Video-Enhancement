@@ -38,14 +38,16 @@ architecture immediate of TestSignalGenerator is
 	(
 		inclk0: IN STD_LOGIC  := '0';
 		c0		: OUT STD_LOGIC; 
-		c1		: OUT STD_LOGIC 
+		c1		: OUT STD_LOGIC; 
+		c2		: OUT STD_LOGIC 
 	);
 	end component;
 	
+	signal EARLYCLOCK : std_logic;
 	signal PIXELCLOCK : std_logic;
 
 begin		
-	clkpll: PLL_7_882 port map ( CLK25, PIXELCLOCK, SUBCARRIER );
+	clkpll: PLL_7_882 port map ( CLK25, EARLYCLOCK, PIXELCLOCK, SUBCARRIER );
 
 
 	process (PIXELCLOCK,TDI)
@@ -268,7 +270,7 @@ begin
 		
 		
 		if TDI='0' then
-			PHI0 <= PIXELCLOCK;
+			PHI0 <= EARLYCLOCK;
 		else
 			PHI0 <= cpuclock;
 		end if;
