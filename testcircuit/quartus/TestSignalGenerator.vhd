@@ -50,14 +50,14 @@ begin
 	clkpll: PLL_7_882 port map ( CLK25, EARLYCLOCK, PIXELCLOCK, SUBCARRIER );
 
 
-	process (PIXELCLOCK,TDI)
+	process (PIXELCLOCK,TDI,EARLYCLOCK)
 		variable displayline : integer range 0 to 311 := 0;
 		variable cycle : integer range 1 to 63 := 1;
 		variable pixel: integer range 0 to 7 := 0;
 		variable cpuclock : std_logic;
 		variable dramaddress : integer range 0 to 3 := 3;
 	begin	
-	
+		
 	
 		if rising_edge(PIXELCLOCK) then
 			-- idle levels of all signals
@@ -79,7 +79,9 @@ begin
 						dramaddress := 3;
 					else 
 						A(1 downto 0) <= std_logic_vector(to_unsigned(dramaddress,2));
-					   dramaddress := dramaddress+1;
+					   if pixel=3 then 
+							dramaddress := dramaddress-1;
+						end if;
 					end if;
 				end if;			
 				
